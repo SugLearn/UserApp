@@ -1,0 +1,29 @@
+<div class="container-fluid">
+<h2>User Details</h2>
+<div>
+    <input class="form-control col-sm-3" type="text" placeholder="Search" [(ngModel)]="name">
+</div>
+<br>
+    <div class="table">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Edit</th>
+                <th>Details</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let list of userlists| customeNameFilter:name;">
+                <td>{{list.id}}</td>
+                <td>{{list.name}}</td>
+                <td><button class="btn btn-success" [routerLink]="['/user', list.id]">Edit</button></td>
+                <td><button class="btn btn-primary" [routerLink]="['/user-detail', list.id]">Details</button></td>
+                <td><button  class="btn btn-danger" (click)="deleteUser(list.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

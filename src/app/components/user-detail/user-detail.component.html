@@ -1,0 +1,22 @@
+<h2>User Details</h2>
+
+<hr/>
+<div *ngIf="users">
+
+  <div>
+    <label><b>UserName: </b></label> {{users.username}}
+  </div>
+  <div>
+    <label><b>Email Id: </b></label> {{users.email}}
+  </div>
+  <div>
+    <label><b>Website: </b></label> {{users.website}}
+  </div>
+  <div>
+    <label><b>Phone No: </b></label> {{users.phone}}
+  </div>
+</div>
+
+<br>
+<br>
+<button [routerLink]="['/user-list']" class="btn btn-primary">Back to List</button><br>
